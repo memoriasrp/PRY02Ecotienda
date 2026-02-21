@@ -1,0 +1,26 @@
+.jumbotron {
+    background-color: rgb(2, 150, 58);
+    color:rgb(228, 243, 252);
+}
+btn {
+color: aquamarine;
+}
+footer {
+    padding: 10px 10px 0 10px;
+    background-color: rgb(2, 150, 58);
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.card-hotel{
+    flex: 1 150px;
+    padding: 2px 5px 2px 5px;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.btn-reserva{
+width: 100%;
+ }
+ a {
+    color: #f3f0ee; /* El color que tú quieras */
+    target: "_blank"
+}
