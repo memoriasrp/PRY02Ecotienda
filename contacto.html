@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECOTIENDA</title>
+    <div id="head-import"></div>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div class="jumbotron p-5 mb-4  rounded-3 ">
+        <h1 class="display-5 fw-bold">LA ECOTIENDA DE MIS SUEÑOS</h1>
+    </div>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="about.html">Nosotros</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+            </ol>
+        </nav>
+        <h1>Dejame tu comentario</h1>
+        <form>
+            <div class="row">
+                <div class="col-sm-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                </div>
+
+                <div class="col-sm-6 mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+            </div>
+            <div class="row">
+                <div class="col-sm-6 mb-3">
+                    <label for="domicilio" class="form-label">Domicilio</label>
+                    <input type="text" class="form-control" id="domicilio" placeholder="Ingrese su domicilio">
+                </div>
+
+                <div class="col-sm-6 mb-3">
+                    <label for="provincia" class="form-label">Provincia</label>
+                    <select class="form-select" id="provincia">
+                        <option value="1" selected>Arequipa</option>
+                        <option value="2">Tacna</option>
+                        <option value="3">Lima</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="comentario" class="form-label">Comentario</label>
+                <textarea class="form-control" id="comentario" rows="10"
+                    placeholder="Escribe tu comentario aquí"></textarea>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Quiero que me contacten
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Enviar</button>
+        </form>
+
+
+    </div>
+    <div id="footer"></div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch("head.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("head-import").innerHTML = data;
+            });
+        fetch("navbar.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Activar el enlace correcto
+                const currentPage = window.location.pathname.split("/").pop();
+
+                document.querySelectorAll("#navbar a").forEach(link => {
+                    const linkPage = link.getAttribute("href");
+
+                    if (linkPage === currentPage) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+
+    </script>
+
+</body>
+
+</html>
