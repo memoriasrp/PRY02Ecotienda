@@ -16,9 +16,7 @@ footer {
 }
 
 .card-hotel {
-    flex: 1 200px;
-    
-    justify-content: space-between;
+    flex: 1 200px;   
     margin-top: 10px;
 }
 
